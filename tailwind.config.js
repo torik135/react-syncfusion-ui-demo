@@ -1,5 +1,6 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  mode: 'JIT',
   darkMode: 'class',
   theme: {
     fontFamily: {
