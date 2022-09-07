@@ -7,7 +7,13 @@ import { links } from '../../data/dummyData';
 import { useStateContext } from '../../context/GlobalProvider';
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize } = useStateContext();
+
+  const handleCloseSidebar = () => {
+    if (activeMenu && screenSize <= 900) {
+      setActiveMenu(false);
+    }
+  };
 
   const activeLinks =
     'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2';
@@ -23,7 +29,7 @@ const Sidebar = () => {
             <Link
               className='items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900'
               to='/'
-              onClick={() => setActiveMenu(false)}
+              onClick={handleCloseSidebar}
             >
               <ShopIcon className='text-3xl' /> <span>Shop</span>
             </Link>
@@ -52,7 +58,7 @@ const Sidebar = () => {
                     }
                     to={`/${link.name}`}
                     key={`${Math.random()}_${link.name}`}
-                    onClick={() => {}}
+                    onClick={handleCloseSidebar}
                   >
                     {link.icon}
                     <span className='capitalize'>{link.name}</span>
