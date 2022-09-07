@@ -4,9 +4,10 @@ import { MdOutlineCancel as CancelIcon } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { links } from '../../data/dummyData';
+import { useStateContext } from '../../context/GlobalProvider';
 
 const Sidebar = () => {
-  const activeMenu = true;
+  const { activeMenu, setActiveMenu } = useStateContext();
 
   const activeLinks =
     'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2';
@@ -20,17 +21,19 @@ const Sidebar = () => {
         <>
           <div className='flex justify-between items-center'>
             <Link
-              to='/'
-              onClick={() => {}}
               className='items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900'
+              to='/'
+              onClick={() => setActiveMenu(false)}
             >
               <ShopIcon className='text-3xl' /> <span>Shop</span>
             </Link>
             <TooltipComponent content='Menu' position='BottomCenter'>
               <button
-                type='button'
-                onClick={() => {}}
                 className='text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden'
+                type='button'
+                onClick={() =>
+                  setActiveMenu((prevActiveMenu) => !prevActiveMenu)
+                }
               >
                 <CancelIcon />
               </button>
@@ -44,12 +47,12 @@ const Sidebar = () => {
                 </p>
                 {items.links.map((link) => (
                   <NavLink
-                    className=''
-                    to={`/${link.name}`}
-                    key={`${Math.random()}_${link.name}`}
-                    onClick={({ isActive }) =>
+                    className={({ isActive }) =>
                       isActive ? activeLinks : normalLinks
                     }
+                    to={`/${link.name}`}
+                    key={`${Math.random()}_${link.name}`}
+                    onClick={() => {}}
                   >
                     {link.icon}
                     <span className='capitalize'>{link.name}</span>
