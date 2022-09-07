@@ -1,4 +1,4 @@
-import './App.css';
+import './assets/css/App.css';
 
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -26,7 +26,7 @@ import {
 } from './pages';
 
 const App = () => {
-  const activeMenu = false;
+  const activeMenu = true;
   return (
     <div>
       <BrowserRouter>
@@ -52,9 +52,8 @@ const App = () => {
             </div>
           )}
           <div
-            className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
-              activeMenu ? ' md:ml-72 ' : 'flex-2'
-            }`}
+            className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${activeMenu ? ' md:ml-72 ' : 'flex-2'
+              }`}
           >
             <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
               <Navbar />
