@@ -4,8 +4,8 @@ import { FiShoppingCart as CartIcon } from 'react-icons/fi';
 import { BsChatLeft as ChatIcon } from 'react-icons/bs';
 import { RiNotification3Line as NotifIcon } from 'react-icons/ri';
 import { MdKeyboardArrowDown as ArrowDownIcon } from 'react-icons/md';
-
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+
 import avatar from '../../assets/img/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '../';
 import { useStateContext } from '../../context/GlobalProvider';
@@ -17,7 +17,7 @@ const NavButton = (props) => {
       <button
         className='relative text-xl rounded-full p-3 hover:bg-light-gray'
         type='button'
-        onClick={onClickFunc}
+        onClick={() => onClickFunc()}
         style={{ color }}
       >
         <span
@@ -48,7 +48,7 @@ const Navbar = () => {
 
     handleResize();
     return () => window.removeEventListener('resize', handleResize);
-  });
+  }, []);
 
   useEffect(() => {
     if (screenSize <= 900) {
@@ -78,14 +78,14 @@ const Navbar = () => {
           title='Chat'
           onClickFunc={() => handleClick('chat')}
           color='blue'
-          dotColor='#red'
+          dotColor='red'
           icon={<ChatIcon />}
         />
         <NavButton
           title='Notification'
           onClickFunc={() => handleClick('notification')}
           color='blue'
-          dotColor='#red'
+          dotColor='red'
           icon={<NotifIcon />}
         />
 
