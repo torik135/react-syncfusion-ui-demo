@@ -20,6 +20,7 @@ const Employees = () => {
         dataSource={employeesData}
         allowPaging
         toolbar={['Search']}
+        editSettings={{allowEditing: true}}
         width='auto'
       >
         <ColumnsDirective>
