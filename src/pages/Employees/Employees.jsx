@@ -4,9 +4,7 @@ import {
   ColumnsDirective,
   Page,
   Search,
-  Edit,
   Inject,
-  Toolbar
 } from '@syncfusion/ej2-react-grids';
 
 import { employeesData, employeesGrid } from '../../data/dummyData';
@@ -19,8 +17,10 @@ const Employees = () => {
       <GridComponent
         dataSource={employeesData}
         allowPaging
+        allowSorting
         toolbar={['Search']}
-        editSettings={{allowEditing: true}}
+        pageSettings={{ pageCount: 5 }}
+        editSettings={{ allowEditing: true, allowDeleting: true }}
         width='auto'
       >
         <ColumnsDirective>
@@ -28,7 +28,7 @@ const Employees = () => {
             <ColumnDirective key={Math.random()} {...item} />
           ))}
         </ColumnsDirective>
-        <Inject services={[Page, Search, Toolbar]} />
+        <Inject services={[Page, Search]} />
       </GridComponent>
     </div>
   );

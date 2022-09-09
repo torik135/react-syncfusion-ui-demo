@@ -25,6 +25,10 @@ const Orders = () => {
         dataSource={ordersData}
         allowPaging
         allowSorting
+        allowExcelExport
+        allowPdfExport
+        contextMenuItems={contextMenuItems}
+        editSettings={{ allowEditing: true, allowDeleting: true }}
       >
         <ColumnsDirective>
           {ordersGrid.map((item) => (
@@ -33,6 +37,7 @@ const Orders = () => {
         </ColumnsDirective>
         <Inject
           services={[
+            Resize,
             Page,
             Sort,
             ContextMenu,

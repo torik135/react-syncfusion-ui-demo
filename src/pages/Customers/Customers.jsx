@@ -1,10 +1,9 @@
 import {
   GridComponent,
   ColumnsDirective,
-  ColumnDIrective,
+  ColumnDirective,
   Page,
   Selection,
-  Search,
   Inject,
   Edit,
   Toolbar,
@@ -22,8 +21,12 @@ const Customers = () => {
       <GridComponent
         dataSource={customersData}
         allowPaging
+        allowSorting
         toolbar={['Search', 'Delete']}
+        pageSettings={{pageCount: 5}}
+        selectionSettings={{persistSelection: true}}
         editSettings={{allowEditing: true, allowDeleting: true}}
+        toolbar={['Delete']}
         width='auto'
       >
         <ColumnsDirective>
@@ -31,7 +34,7 @@ const Customers = () => {
             <ColumnDirective key={Math.random()} {...item} />
           ))}
         </ColumnsDirective>
-        <Inject services={[Page, Search, Toolbar, Selection, Edit, Sort, Filter]} />
+        <Inject services={[Page, Toolbar, Selection, Edit, Sort, Filter]} />
       </GridComponent>
     </div>
   );
