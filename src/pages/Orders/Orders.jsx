@@ -13,20 +13,21 @@ import {
   Inject,
 } from '@syncfusion/ej2-react-grids';
 
-import {
-  ordersData,
-  contextMenuItems,
-  ordersGrids,
-} from '../../data/dummyData';
+import { ordersData, contextMenuItems, ordersGrid } from '../../data/dummyData';
 import { Header } from '../../components';
 
 const Orders = () => {
   return (
     <div className='m-2 md:m-10 p-2 md:p-10 b-white rounded-3xl'>
       <Header category='Page' title='orders' />
-      <GridComponent>
-        <ColumnsDirective id='gridcomp' dataSource={ordersData} allowPaging allowSorting>
-          {ordersGrids.map((item) => (
+      <GridComponent
+        id='gridcomp'
+        dataSource={ordersData}
+        allowPaging
+        allowSorting
+      >
+        <ColumnsDirective>
+          {ordersGrid.map((item) => (
             <ColumnDirective key={Math.random()} {...item} />
           ))}
         </ColumnsDirective>
