@@ -35,7 +35,6 @@ const Navbar = () => {
     activeMenu,
     setActiveMenu,
     isClicked,
-    setIsClicked,
     handleClick,
     screenSize,
     setScreenSize,
@@ -63,7 +62,7 @@ const Navbar = () => {
     <div className='flex justify-between p-2 md:mx-6 relative'>
       <NavButton
         title='Menu'
-        onClickFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
+        onClickFunc={() => setActiveMenu(!activeMenu)}
         color={currentColor}
         icon={<MenuIcon />}
       />

@@ -10,7 +10,7 @@ import {
 import { useStateContext } from '../../context/GlobalProvider';
 
 const Ecommerce = () => {
-  const {currentColor} = useStateContext();
+  const { currentColor } = useStateContext();
   return (
     <div className='mt-12'>
       <div className='flex flex-wrap lg:flex-nowrap justify-center'>
@@ -20,6 +20,12 @@ const Ecommerce = () => {
               <p className='font-bold text-gray-400'>Earning</p>
               <p className='text-2xl'>Rp. 10.000.000</p>
             </div>
+            <button
+              className='text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full p-4'
+              style={{ backgroundColor: currentColor }}
+            >
+              <DollarIcon />
+            </button>
           </div>
           <div className='mt-6'>
             <Button
@@ -113,7 +119,7 @@ const Ecommerce = () => {
               </div>
             </div>
             <div>
-              <Stacked width='320px' height='360px'/>
+              <Stacked width='320px' height='360px' />
             </div>
           </div>
         </div>
