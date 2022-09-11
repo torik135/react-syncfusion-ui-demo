@@ -5,7 +5,7 @@ import {
   AiOutlineMinus as MinusIcon,
 } from 'react-icons/ai';
 
-import { useStateContext } from '../../contexts/GlobalProvider';
+import { useStateContext } from '../../context/GlobalProvider';
 import { cartData } from '../../data/dummyData';
 import { Button } from '../';
 
