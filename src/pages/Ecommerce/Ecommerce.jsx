@@ -107,7 +107,7 @@ const Ecommerce = () => {
                   color='white'
                   bgColor='blue'
                   text='Download Report'
-                  borderRaius='10px'
+                  borderRadius='10px'
                 />
               </div>
             </div>
