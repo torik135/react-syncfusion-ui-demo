@@ -54,7 +54,7 @@ const Sidebar = () => {
                 {items.links.map((link) => (
                   <NavLink
                     style={({ isActive }) => ({
-                      backgrounColor: isActive ? currentColor : '',
+                      backgroundColor: isActive ? currentColor : '',
                     })}
                     className={({ isActive }) =>
                       isActive ? activeLinks : normalLinks

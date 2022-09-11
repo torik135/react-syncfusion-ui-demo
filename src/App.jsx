@@ -63,7 +63,7 @@ const App = () => {
               <Navbar />
             </div>
             <div>
-              {ThemeSettings && <ThemeSetting />}
+              {themeSettings && <ThemeSetting />}
               <Routes>
                 {/* DASH */}
                 <Route path='/' element={<Ecommerce />} />
