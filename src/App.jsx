@@ -26,7 +26,13 @@ import { Navbar, Footer, Sidebar, ThemeSetting } from './components';
 import { useStateContext } from './context/GlobalProvider';
 
 const App = () => {
-  const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } = useStateContext();
+  const {
+    activeMenu,
+    themeSettings,
+    setThemeSettings,
+    currentColor,
+    currentMode,
+  } = useStateContext();
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
@@ -54,10 +60,7 @@ const App = () => {
           )}
           <div
             className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full 
-              ${activeMenu 
-                ? 'md:ml-72 ' 
-                : 'flex-2'
-            }`}
+              ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}
           >
             <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
               <Navbar />
@@ -91,6 +94,7 @@ const App = () => {
                 <Route path='/stacked' element={<StackedPages />} />
               </Routes>
             </div>
+            <Footer />
           </div>
         </div>
       </BrowserRouter>
