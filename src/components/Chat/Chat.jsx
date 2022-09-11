@@ -1,4 +1,3 @@
-import React from 'react';
 import { MdOutlineCancel as CancelIcon } from 'react-icons/md';
 
 import { Button } from '../';
