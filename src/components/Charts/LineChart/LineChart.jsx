@@ -12,7 +12,7 @@ import {
 import {
   lineCustomSeries,
   LinePrimaryXAxis,
-  LinePrimaryYAxix,
+  LinePrimaryYAxis,
 } from '../../../data/dummyData';
 import { useStateContext } from '../../../context/GlobalProvider';
 
@@ -24,7 +24,7 @@ const LineChart = () => {
       id='line-chart'
       height='420px'
       primaryXAxis={LinePrimaryXAxis}
-      primaryYAxis={LinePrimaryYAxix}
+      primaryYAxis={LinePrimaryYAxis}
       chartArea={{ border: { width: 0 } }}
       tooltip={{ enable: true }}
       background={currentMode === 'Dark' ? '#33373e' : '#fff'}

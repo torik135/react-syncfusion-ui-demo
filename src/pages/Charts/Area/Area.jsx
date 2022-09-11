@@ -11,7 +11,7 @@ import {
 import {
   areaCustomSeries,
   areaPrimaryXAxis,
-  areaPrimaryYAxix,
+  areaPrimaryYAxis,
 } from '../../../data/dummyData';
 import { Header } from '../../../components';
 import { useStateContext } from '../../../context/GlobalProvider';
@@ -29,7 +29,7 @@ const Area = () => {
         id='area-chart'
         height='420px'
         primaryXAxis={areaPrimaryXAxis}
-        primaryYAxis={areaPrimaryYAxix}
+        primaryYAxis={areaPrimaryYAxis}
         chartArea={{ border: { width: 0 } }}
         tooltip={{ enable: true }}
         background={currentMode === 'Dark' ? '#33373e' : '#fff'}

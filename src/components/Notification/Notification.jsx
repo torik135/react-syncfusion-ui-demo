@@ -1,6 +1,6 @@
 import { MdOutlineCancel as CancelIcon } from 'react-icons/md';
 
-import { Button } from '.';
+import { Button } from '../';
 import { chatData } from '../../data/dummyData';
 import { useStateContext } from '../../context/GlobalProvider';
 

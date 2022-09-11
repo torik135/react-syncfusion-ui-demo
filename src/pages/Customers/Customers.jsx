@@ -26,7 +26,6 @@ const Customers = () => {
         pageSettings={{pageCount: 5}}
         selectionSettings={{persistSelection: true}}
         editSettings={{allowEditing: true, allowDeleting: true}}
-        toolbar={['Delete']}
         width='auto'
       >
         <ColumnsDirective>

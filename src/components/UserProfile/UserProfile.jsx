@@ -1,6 +1,6 @@
 import { MdOutlineCancel as CancelIcon } from 'react-icons/md';
 
-import { Button } from '.';
+import { Button } from '../';
 import { userProfileData } from '../../data/dummyData';
 import { useStateContext } from '../../context/GlobalProvider';
 import avatar from '../../assets/img/avatar.jpg';

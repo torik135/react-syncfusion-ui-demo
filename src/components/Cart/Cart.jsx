@@ -17,7 +17,7 @@ const Cart = () => {
         <div className='flex justify-between items-center'>
           <p className='font-semibold text-lg'>Shopping Cart</p>
           <Button
-            icon={<CartIcon />}
+            icon={<CancelIcon />}
             color='rgb(153, 171, 180)'
             bgHoverColor='light-gray'
             size='2xl'
